@@ -1,0 +1,15 @@
+<a routerLink="/">Về trang chủ</a>
+<table>
+  <tr>
+    <th>Danh sách đọc</th>
+  </tr>
+  <tr *ngFor="let book of bookList">
+    <td *ngIf="!book.read">{{book.name}}</td>
+    <td *ngIf="!book.read"><input type="button" value="Đã đọc" (click)="click(book)"></td>
+  </tr>
+  <tr>
+    <td><input type="text" [(ngModel)]="newBook"></td>
+    <td><input type="button" value="Thêm" (click)="addNewBook()"></td>
+  </tr>
+</table>
+<a routerLink="/read">Danh sách đã đọc</a>
